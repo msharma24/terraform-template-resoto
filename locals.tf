@@ -17,6 +17,7 @@ locals {
 
   docker-compose version
 
+  echo "[INFO] Configuring Resoto shell"
   mkdir -p /home/ec2-user/resoto/dockerV2
   cd /home/ec2-user/resoto
   curl -o docker-compose.yaml https://raw.githubusercontent.com/someengineering/resoto/2.3.2/docker-compose.yaml
@@ -24,6 +25,5 @@ locals {
   docker-compose up -d
 
   sudo chown -R ec2-user:ec2-user /home/ec2-user/resoto
-  echo "[INFO] Running init script..."
   EOT
 }
