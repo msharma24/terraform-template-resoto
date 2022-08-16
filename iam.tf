@@ -17,8 +17,7 @@ module "resoto_instance_iam_assumable_role" {
 
   custom_role_policy_arns = [
     "arn:aws:iam::aws:policy/service-role/AmazonEC2RoleforSSM",
-    "arn:aws:iam::aws:policy/AmazonElasticFileSystemClientReadWriteAccess",
-    "arn:aws:iam::aws:policy/AmazonS3FullAccess"
+    "arn:aws:iam::aws:policy/AmazonEC2ReadOnlyAccess"
 
   ]
 }
