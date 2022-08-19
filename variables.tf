@@ -29,3 +29,9 @@ variable "public_key" {
   type        = string
 
 }
+
+variable "resoto_install_method" {
+  description = "Choose Resoto Option - Docker or local install using python pip"
+  type        = string
+
+}

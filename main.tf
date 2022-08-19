@@ -11,15 +11,20 @@ module "resoto_ec2_instance" {
   iam_instance_profile        = module.resoto_instance_iam_assumable_role.iam_instance_profile_id
   associate_public_ip_address = true
   key_name                    = module.key_pair.key_pair_name
-  #user_data                   = base64encode(templatefile("${path.module}/init.tfpl", {}))
-  user_data_base64 = base64encode(local.user_data)
 
+  #user_data_base64 = base64encode(local.user_data)
+  # user_data_base64 = var.resoto_install_method == "docker" ? base64encode(local.user_data_docker) : base64encode(local.user_data_python_pip)
+  user_data = local.resoto_install_method == "docker" ? local.user_data_docker : local.user_data_python_pip
 
   tags = {
     Terraform   = "true"
     Environment = "dev"
   }
 
+}
+
+locals {
+  resoto_install_method = var.resoto_install_method
 }
 
 
