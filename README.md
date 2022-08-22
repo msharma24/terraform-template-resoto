@@ -18,6 +18,7 @@ This project creates an EC2 instance with an IAM Profile in an existing VPC with
 subnet_id             = "PUBLIC_SUBNET_ID"
 public_key            = "YOUR_SSH_PUB_KEY"
 resoto_install_method = "docker" or "local"
+aws_region            = "ap-southeast-2"
 ```
 `resoto_install_method` If you choose `docker` resoto shell will be configured to run inside docker containers using `docker-compose` and if you choose `local` the `resotoshell` will be configured to on the local VM using `python3.10` and `pip`
 
