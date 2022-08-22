@@ -14,10 +14,10 @@ This project creates an EC2 instance with an IAM Profile in an existing VPC with
 ## How to deploy ? 
 - Git clone this project.
 - create a `terraform.tfvars` file locally `$touch terraform.tfvars` and enter the following values
-```vpc_id                = "VPC_ID"
+```vpc_id             = "VPC_ID"
 subnet_id             = "PUBLIC_SUBNET_ID"
 public_key            = "YOUR_SSH_PUB_KEY"
-#resoto_install_method = "docker" or "local"
+resoto_install_method = "docker" or "local"
 ```
 `resoto_install_method` If you choose `docker` resoto shell will be configured to run inside docker containers using `docker-compose` and if you choose `local` the `resotoshell` will be configured to on the local VM using `python3.10` and `pip`
 
@@ -45,5 +45,6 @@ terraform destroy
 
 
 # Getting Started with Resoto
-## Usage pattersns
+
+## Usage patterns
 ### ToDO
