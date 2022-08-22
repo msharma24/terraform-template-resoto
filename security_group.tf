@@ -11,15 +11,18 @@ module "resoto_vpc_ssh_sg" {
     "${chomp(data.http.myip.body)}/32"
   ]
 
-  computed_ingress_with_cidr_blocks = [
-    {
-      from_port   = 8900
-      to_port     = 8900
-      protocol    = 6
-      description = "Resotocore listens on port 8900"
-      cidr_blocks = "${chomp(data.http.myip.body)}/32"
-    },
-  ]
+
+}
+
+
+resource "aws_security_group_rule" "allow_resh" {
+  type              = "ingress"
+  from_port         = 8900
+  to_port           = 8900
+  protocol          = "tcp"
+  cidr_blocks       = ["${chomp(data.http.myip.body)}/32"]
+  security_group_id = module.resoto_vpc_ssh_sg.security_group_id
+  description       = "Allow local shell access to resh"
 
 
 }
