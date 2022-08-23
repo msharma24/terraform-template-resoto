@@ -20,7 +20,9 @@ public_key            = "YOUR_SSH_PUB_KEY"
 resoto_install_method = "docker" or "local"
 aws_region            = "ap-southeast-2"
 ```
-`resoto_install_method` If you choose `docker` resoto shell will be configured to run inside docker containers using `docker-compose` and if you choose `local` the `resotoshell` will be configured to on the local VM using `python3.10` and `pip`
+
+
+TF_VAR `resoto_install_method`  ==> If you choose `docker` resoto shell will be configured to run inside docker containers using `docker-compose` and if you choose `local` the `resotoshell` will be configured to on the EC2 VM using `python3.10` and `pip`
 
 Configure your [AWS access
 keys](http://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys) as
