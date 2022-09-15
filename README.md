@@ -49,5 +49,4 @@ terraform destroy
 
 # Getting Started with Resoto
 
-## Usage patterns
-### ToDO
+https://mukeshsharma.dev/2022/09/03/how-get-started-with-resoto.html
